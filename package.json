@@ -1,8 +1,13 @@
 {
   "name": "personal",
   "version": "1.0.0",
-  "description": "My personal site.",
+  "description": "My personal static site developed with Nuxt.js.",
   "author": "Nathan Reyes <nathanreyes@me.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nathanreyes/personal.git"
+  },
   "private": true,
   "scripts": {
     "dev": "nuxt",
