@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Welcome",
+    "date": "2018-01-01",
+    "summary": "This is the summary for post 1.",
+    "slug": "welcome",
+    "completed": "true"
+  },
+  {
+    "title": "Building a Calendar in Vuejs",
+    "date": "2017-12-01",
+    "summary": "This is the article about building a simple calendar in Vue.js.",
+    "slug": "building-a-calendar-in-vuejs"
+  }
+]

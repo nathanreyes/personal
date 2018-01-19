@@ -1,0 +1,154 @@
+$light-background: #fafafa
+
+$background: $light-background
+
+$dark-text: #333333
+$dark-text-lighter: #595959
+$dark-text-lightest: #737373
+
+$font-family-sans-serif: 'Open Sans', sans-serif
+$font-family-serif: 'Raleway', serif
+
+$max-width: 720px
+$menu-color: #b6b3af
+$menu-hover-color: #868079
+
+$light-divider: #e7e6e4
+
+$footer-color: #938f85
+$footer-bg-color: #f3f3f1
+$footer-border-color: #e7e6e4
+
+$font-weight-light: 300
+$font-weight-normal: 400
+
+$size-1: 2.5rem !default
+$size-2: 2rem !default
+$size-3: 1.5rem !default
+$size-4: 1.25rem !default
+$size-5: 1rem !default
+$size-6: 0.9rem !default
+$size-7: 0.75rem !default
+
+=container
+  max-width: $max-width
+  margin: 0 auto
+  position: relative
+
+=link
+  color: $menu-color
+  text-decoration: none
+  transition: all 0.1s ease-in-out
+  &:hover
+    color: $menu-hover-color
+
+=light-divider
+  margin: 0 30px
+  border-bottom: 1px solid $light-divider
+  width: 80%
+
+html
+  font-family: $font-family-sans-serif
+  font-weight: $font-weight-normal
+  color: $dark-text
+  background-color: $background
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-family-serif
+
+h1
+  font-size: $size-1
+
+h2
+  font-size: $size-2
+
+h3
+  font-size: $size-3
+
+h4
+  font-size: $size-4
+
+h5
+  font-size: $size-5
+
+h6
+  font-size: $size-6
+
+.container
+  +container()
+
+.link
+  +link()
+
+.title
+  font-family: $font-family-serif
+  font-size: 2rem
+  color: $dark-text
+  text-transform: capitalize
+
+.date
+  color: $dark-text-lightest
+  text-transform: uppercase
+  font-weight: $font-weight-light
+  margin-top: 14px
+
+.summary
+  color: $dark-text-lighter
+  font-size: 1.2rem
+  line-height: 1.8
+  margin-top: 24px
+  margin-bottom: 60px
+
+.layout
+  display: flex
+  flex-direction: column
+  align-items: stretch
+  min-height: 100vh
+
+.light-divider
+  +light-divider()
+
+.navbar
+  font-size: 1.2rem
+  font-weight: $font-weight-light
+  padding-top: 1.2rem
+  padding-bottom: 1.2rem
+  margin-bottom: 60px
+  > .container
+    display: flex
+    justify-content: space-between
+    align-items: stretch
+    a
+      +link()
+      color: $dark-text
+    .navbar-logo
+      font-family: $font-family-serif
+      font-size: 2rem
+      .caption
+        color: $dark-text-lighter
+        font-family: $font-family-sans-serif
+        font-size: $size-6
+        margin-top: 15px
+        margin-left: 30px
+    .navbar-menu
+      ul
+        display: flex
+        align-items: center
+        li
+          &:not(:last-child)
+            &:after
+              content: '\00B7'
+              color: $menu-color
+              margin: 0 10px
+.content
+  flex: 1
+
+.footer
+  color: $footer-color
+  background-color: $footer-bg-color
+  border-top: 1px solid $footer-border-color
+  > .container
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 80px
