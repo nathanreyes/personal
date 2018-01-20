@@ -17,7 +17,10 @@ module.exports = {
     ],
   },
   modules: [
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-112800168-1'
+    }],
   ],
   css: [
     '@/assets/minireset.sass',

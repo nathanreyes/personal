@@ -22,6 +22,7 @@
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
+    "@nuxtjs/google-analytics": "2.0.2",
     "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
