@@ -1,11 +1,13 @@
 <template>
   <div>
-    <h1 class='title'>
+    <h2 class='text-brown-darkest capitalize mb-2'>
       {{ post.title }}
-    </h1>
-    <p class='date'>
+    </h2>
+    <p class='text-center text-brown text-sm md:text-left'>
       {{ post.date.toDateString() }}
     </p>
+    <div v-html='content'>
+    </div>
   </div>
 </template>
 
@@ -13,14 +15,17 @@
 import Post from '~/util/post';
 
 export default {
-  fetch ({store, params}) {
-    store.dispatch('posts/getAll')
-    store.dispatch('posts/get', params.slug)
+  fetch({ store, params }) {
+    store.dispatch('posts/getAll');
+    store.dispatch('posts/get', params.slug);
   },
   computed: {
     post() {
       return Post(this.$store.state.posts.selected);
     },
-  }
-}
+    content() {
+      return require(`~/content/posts/${this.post.slug}.md`);
+    },
+  },
+};
 </script>

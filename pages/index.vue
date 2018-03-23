@@ -2,12 +2,13 @@
 <div>
   <section id='posts'>
     <div v-for='(post, i) in posts' :key='i'>
+      <hr v-if='i > 0' />
       <div
         class='light-divider'
         v-if='i !== 0'>
       </div>
       <post-list-item
-        :post='post'>
+        v-bind='post'>
       </post-list-item>
     </div>
   </section>
@@ -15,7 +16,7 @@
 </template>
 
 <script>
-import PostListItem from '../components/PostListItem';
+import PostListItem from '~/components/PostListItem';
 import Post from '~/util/post';
 
 export default {
@@ -28,14 +29,7 @@ export default {
   computed: {
     posts() {
       return this.$store.state.posts.list.map(p => Post(p));
-    }
-  }
-}
+    },
+  },
+};
 </script>
-
-<style lang='sass' scoped>
-
-.light-divider
-  margin-bottom: 60px
-
-</style>

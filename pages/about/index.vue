@@ -1,48 +1,16 @@
 <template>
-<div>
-  <section class='profile'>
-    <div class='profile-img'>
-    </div>
-    <div class='profile-content'>
-      <h2>Howdy...</h2>
-      <p>
-        Welcome to my site. Here, you can see what I've worked on and my thoughts on development with Vue.js and productivity in general.
-      </p>
-    </div>
-  </section>
-</div>
+  <div>
+    <h2 class='text-center'>Hi. I'm Nathan.</h2>
+    <p>
+      I love building software tools. It all began about 10 years ago when I started building awful Microsoft
+      Access databases at first company (ugh). That got me hooked into coding and soon moved into Windows development (WPF, Winforms, SQL Databases).
+    </p>
+    <p>
+      For about 3 years, I dipped my toes in iOS development and released a budgeting app to the App Store.
+    </p>
+    <p>
+      Now, I prefer to build things for people using Vue.js, Nuxt, Express, Feathersjs and more.
+      If you would like me to build something for you, please feel free to contact me via email at <a href='mailto:nathanreyes@me.com'>nathanreyes@me.com</a>.
+    </p>
+  </div>
 </template>
-
-<style lang='sass'>
-
-@import '../../assets/site.sass'
-
-$image-span: 160px
-
-.profile
-  display: flex
-  justify-content: space-between
-  align-items: center
-  height: 200px
-  width: 100%
-  padding: 0 30px
-
-.profile-img
-  flex-grow: 0
-  flex-shrink: 0
-  width: $image-span
-  height: $image-span
-  border-radius: 50%
-  overflow: hidden
-  background-image: url('~/assets/profile.jpg')
-  background-repeat: no-repeat
-  background-size: cover
-  background-position: 50% 50%
-
-.profile-content
-  flex-grow: 1
-  margin-left: 60px
-  p
-    margin-top: 30px
-
-</style>
