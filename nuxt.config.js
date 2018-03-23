@@ -89,6 +89,7 @@ module.exports = {
               path.join(__dirname, './pages/**/*.vue'),
               path.join(__dirname, './layouts/**/*.vue'),
               path.join(__dirname, './components/**/*.vue'),
+              path.join(__dirname, './posts/**/*.md'),
             ]),
             extractors: [
               {
