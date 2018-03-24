@@ -82,7 +82,7 @@ module.exports = {
           exclude: /(node_modules)/,
         });
       }
-      if (isDev) {
+      if (!isDev) {
         config.plugins.push(
           new PurgecssPlugin({
             // purgecss configuration
