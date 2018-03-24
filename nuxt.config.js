@@ -96,7 +96,7 @@ module.exports = {
             extractors: [
               {
                 extractor: TailwindExtractor,
-                extensions: ['vue'],
+                extensions: ['vue', 'md'],
               },
             ],
             whitelist: ['html', 'body', 'nuxt-progress'],
