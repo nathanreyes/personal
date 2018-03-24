@@ -82,7 +82,8 @@ module.exports = {
           exclude: /(node_modules)/,
         });
       }
-      if (!isDev) {
+      // Disable purgecss until it can support the markdown files
+      if (false) {
         config.plugins.push(
           new PurgecssPlugin({
             // purgecss configuration
