@@ -68,6 +68,8 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    extractCSS: true,
+    postcss: [require('tailwindcss')('./tailwind.js')],
     /*
     ** Run ESLint on save
     */
@@ -80,7 +82,7 @@ module.exports = {
           exclude: /(node_modules)/,
         });
       }
-      if (!isDev) {
+      if (isDev) {
         config.plugins.push(
           new PurgecssPlugin({
             // purgecss configuration
@@ -102,8 +104,6 @@ module.exports = {
         );
       }
     },
-    extractCSS: true,
-    postcss: [require('tailwindcss')('./tailwind.js')],
   },
   generate: {
     routes: posts.map(p => `/${p.slug}`),
