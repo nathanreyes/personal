@@ -1,6 +1,6 @@
 [
   {
-    "img": "./images/projects/v-calendar/cover.gif",
+    "img": "https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522242158/personal/projects/v-calendar/cover.gif",
     "imgAlt": "Date picker selecting",
     "imgClass": "py-4",
     "title": "V-Calendar",
@@ -9,7 +9,7 @@
     "technologies": ["vue", "sass"]
   },
   {
-    "img": "./images/projects/st-matthews/cover.png",
+    "img": "http://res.cloudinary.com/dqgcfqzpk/image/upload/c_scale,w_800/v1522241991/personal/projects/st-matthews/cover.png",
     "imgAlt": "Landing page for St. Matthew's Day School",
     "imgClass": "",
     "title": "St. Matthew's Day School",
@@ -18,7 +18,7 @@
     "technologies": ["vue", "vue-router", "sass", "express", "mongodb"]
   },
   {
-    "img": "./images/projects/the-well/cover.png",
+    "img": "http://res.cloudinary.com/dqgcfqzpk/image/upload/c_scale,w_800/v1522242110/personal/projects/the-well/cover.png",
     "imgAlt": "Landing page for The Well Pampa",
     "imgClass": "",
     "title": "The Well STEM Center",

@@ -92,7 +92,7 @@ So to restate the problem, what we need is a way to functionally extend our cale
 
 First, we should acknowledge that what we are trying to do with our calendar component essentially changes its core function. It is a calendar and we would like to keep it that way. We are now transforming it into different kinds of date pickers. Making this subtle but important distinction could save us heartache in the future when we decide to use it to display events, for example. Let’s use a diagram to help us get a bigger picture for what exactly we are trying to accomplish.
 
-<img class='block mx-auto md:w-3/4 mb-6' src='/images/building-a-calendar-in-vuejs-using-extends/cover.png'>
+<img class='block mx-auto md:w-3/4 mb-6' src='https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522240977/personal/posts/building-a-calendar-in-vuejs-using-extends/cover.png'>
 
 ### Using the ‘extends’ option
 

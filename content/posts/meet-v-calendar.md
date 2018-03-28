@@ -1,4 +1,4 @@
-<img class='block mx-auto md:w-3/4 mb-6' src='./images/meet-v-calendar/cover.png'>
+<img class='block mx-auto md:w-3/4 mb-6' src='https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522241033/personal/posts/meet-v-calendar/cover.png'>
 
 Several months ago, I set out to write part 3 in my series on building an extendable calendar using Vue.js. Unfortunately, I’m sad to report that this is not that article! :(
 
@@ -13,7 +13,7 @@ It’s called V-Calendar, and while it was born from my desire for an all in one
 
 ### Base Calendar
 
-<img class='block mx-auto mb-6' src='./images/meet-v-calendar/base-calendar.gif'>
+<img class='block mx-auto mb-6' src='https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522241034/personal/posts/meet-v-calendar/base-calendar.gif'>
 
 ```html
 <template>
@@ -92,7 +92,7 @@ For example, let’s take a look at how to use highlights in practice.
 
 Highlights appear as spanned regions of styled bordered backgrounds. Usually, you’ll want to pair a highlight with a content style as well so that text is legible within the highlighted region. Highlights that span date ranges appear as continuous background regions from the defined start date to the end date. The border radius only applies to the highlighted end caps.
 
-<img class='block mx-auto md:w-3/4 mb-6' src='./images/meet-v-calendar/highlights.png'>
+<img class='block mx-auto md:w-3/4 mb-6' src='https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522241033/personal/posts/meet-v-calendar/highlights.png'>
 
 The example above can be represented using 3 attributes. Each attribute has a defined highlight with an associated content style (a style that is just applied to the day label content) so that the days are clearly legible when displayed within the highlighted backgrounds. Finally, we also need to provide an array of dates or date ranges over which each attribute is to be applied.
 
@@ -190,7 +190,7 @@ export default {
 
 Dot indicators are another kind of object that can be defined within attributes. They follow the same rules as highlights, and can even be applied over date ranges as well. When a date range is used, the indicator is simply repeated for each day within the range.
 
-<img class='block mx-auto md:w-3/4 mb-6' src='./images/meet-v-calendar/dots.png'>
+<img class='block mx-auto md:w-3/4 mb-6' src='https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522241033/personal/posts/meet-v-calendar/dots.png'>
 
 ```html
 <template>
@@ -261,7 +261,7 @@ export default {
 
 Bars indicators behave exactly the same as dot indicators. They just appear as bars spread evenly across the bottom of day cells.
 
-<img class='block mx-auto md:w-3/4 mb-6' src='./images/meet-v-calendar/bars.png'>
+<img class='block mx-auto md:w-3/4 mb-6' src='https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522241032/personal/posts/meet-v-calendar/bars.png'>
 
 ```html
 <template>
@@ -332,7 +332,7 @@ export default {
 
 In addition to being used in conjunction with other attribute objects, content styles can be used independently.
 
-<img class='block mx-auto md:w-3/4 mb-6' src='./images/meet-v-calendar/content-styles.png'>
+<img class='block mx-auto md:w-3/4 mb-6' src='https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522241033/personal/posts/meet-v-calendar/content-styles.png'>
 
 ```html
 <template>
@@ -419,7 +419,7 @@ export default {
 
 A semantic-inspired navigation panel allows the user to jump to desired months and years when the header title is hovered (on desktop) or clicked (on mobile). One really nice additional feature with the drop-down navigation panel is that it can use any supplied attributes to display indicators for calendar month cells. The aim with this design was to help provide some additional context for users of your web applications.
 
-<img class='block mx-auto mb-6' src='./images/meet-v-calendar/navigation.gif'>
+<img class='block mx-auto mb-6' src='https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522241034/personal/posts/meet-v-calendar/navigation.gif'>
 
 ### Date Picker
 
@@ -431,7 +431,7 @@ Because of the flexibility built in to v-calendar, adding date picker support ou
 
 Other date picker features include options for inline display, custom input slots, custom selection attribute, date formatting and more.
 
-<img class='block mx-auto mb-6' src='./images/meet-v-calendar/date-picker.gif'>
+<img class='block mx-auto mb-6' src='https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522241034/personal/posts/meet-v-calendar/date-picker.gif'>
 
 ### Conclusion
 

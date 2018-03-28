@@ -2,7 +2,7 @@
 
 Before we continue to Part 2 of this series, upon reflecting on the code from Part 1, I realized there was a use-case not supported by the current state model. Many calendars like to display the day numbers for days that aren’t in the current month. Most of the time they are in a lighter colored font, but they are still there and some users may find that bit of context useful.
 
-<img class='block mx-auto md:w-3/4 mb-6' src='/images/building-a-calendar-in-vuejs-updates/cover.png'>
+<img class='block mx-auto md:w-3/4 mb-6' src='https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522240934/personal/posts/building-a-calendar-in-vuejs-updates/cover.png'>
 
 To support this feature, we need to refactor our code a little bit. First, we’ll add three new computed properties to make life a little easier down the road.
 

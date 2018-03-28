@@ -1,4 +1,4 @@
-<img class='block mx-auto md:w-3/4 mb-6' src='/images/building-a-calendar-in-vuejs/cover.png'>
+<img class='block mx-auto md:w-3/4 mb-6' src='https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522240872/personal/posts/building-a-calendar-in-vuejs/cover.png'>
 
 In this series of tutorials, we’ll construct a lightweight, extendable calendar component in Vue.js. We’ll cover step by step how to implement the date logic as well as introduce some Vue specific features to support multiple interface designs. The date logic is surprisingly simple…probably more simple than you would initially think, and hopefully you will be introduced to some ideas on how to design components that are built for future reuse and extendability.
 

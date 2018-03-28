@@ -3,28 +3,28 @@
     "title": "Meet V-Calendar, a Vue.js plugin for attributed calendars",
     "date": "2017-11-15",
     "slug": "meet-v-calendar",
-    "img": "./images/meet-v-calendar/cover.png",
+    "img": "https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522241033/personal/posts/meet-v-calendar/cover.png",
     "summary": "Several months ago, I set out to write part 3 in my series on building an extendable calendar using Vue.js. Unfortunately, I’m sad to report that this is not that article! :( However, it’s not all sad faces because what bore from it was a full-blown calendar plugin. It has been in the works for these past few months, and I’m excited to finally share it with others who love to make things with Vue.js."
   },
   {
     "title": "Building a Calendar in Vue.js - Date picker using 'Extends'",
     "date": "2017-07-03",
     "slug": "building-a-calendar-in-vuejs-using-extends",
-    "img": "./images/building-a-calendar-in-vuejs-using-extends/cover.png",
+    "img": "https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522240977/personal/posts/building-a-calendar-in-vuejs-using-extends/cover.png",
     "summary": "Welcome to Part 2 of this series on building an extendable calendar in Vue.js. I’m very excited to share a technique commonly used to functionally extend Vue.js components. If you come from the legacy desktop world as I do, you may have had some trouble when trying to re-implement some of the older techniques you’re more accustomed to when trying to reuse user interface components. I mean, is there subclassing in Vue?…would that be overkill…or should you just create a parent component that wraps your original one and reimplements all of the UI?…what to do, what to do?"
   },
   {
     "title": "Building a Calendar in Vue.js - Updates",
     "date": "2017-07-03",
     "slug": "building-a-calendar-in-vuejs-updates",
-    "img": "./images/building-a-calendar-in-vuejs-updates/cover.png",
+    "img": "https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522240934/personal/posts/building-a-calendar-in-vuejs-updates/cover.png",
     "summary": "Before we continue to Part 2 of this series, upon reflecting on the code from Part 1, I realized there was a use-case not supported by the current state model. Many calendars like to display the day numbers for days that aren’t in the current month. Most of the time they are in a lighter colored font, but they are still there and some users may find that bit of context useful."
   },
   {
     "title": "Building a Calendar in Vue.js",
     "date": "2017-06-23",
     "slug": "building-a-calendar-in-vuejs",
-    "img": "./images/building-a-calendar-in-vuejs/cover.png",
+    "img": "https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522240872/personal/posts/building-a-calendar-in-vuejs/cover.png",
     "summary": "In this series of tutorials, we’ll construct a lightweight, extendable calendar component in Vue.js. We’ll cover step by step how to implement the date logic as well as introduce some Vue specific features to support multiple interface designs. The date logic is surprisingly simple…probably more simple than you would initially think, and hopefully you will be introduced to some ideas on how to design components that are built for future reuse and extendability."
   }
 ]
