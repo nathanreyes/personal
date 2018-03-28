@@ -36,12 +36,11 @@
 
 html {
   @apply .font-sans;
-  font-size: 16px;
-  line-height: 1.7;
 }
 
 body {
   @apply .text-grey-darkest;
+  font-size: 16px;
 }
 
 h1,
@@ -80,12 +79,9 @@ h6 {
   @apply .text-sm .tracking-wide mb-6;
 }
 
-p {
-  line-height: 1.7;
-}
-
+p,
 li {
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 p {
@@ -100,10 +96,10 @@ hr {
 
 ol,
 ul {
-  @apply -ml-6;
+  @apply -ml-4;
   list-style-position: outside;
   li {
-    @apply .pl-6 .mb-6 .text-lg;
+    @apply .pl-4 .mb-4 .text-lg;
   }
 }
 
@@ -116,12 +112,7 @@ pre > code {
 }
 
 a {
-  @apply .text-brown-darker .cursor-pointer .no-underline;
-  transition: all 0.14s ease-in-out;
-  &.nuxt-link-exact-active,
-  &:hover {
-    @apply .text-brown-darkest .border-b .border-brown-darkest;
-  }
+  @apply .cursor-pointer .no-underline;
 }
 
 blockquote {
@@ -131,16 +122,12 @@ blockquote {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   border-left: 3px solid grey;
-  // font-family: $font-family-serif;
   font-style: italic;
   margin-bottom: 1.5rem;
-  // background-color: $footer-bg-color;
-  // p {
-  //   margin: 0;
-  //   padding: 0;
-  //   line-height: 2;
-  //   font-size: $size-4;
-  // }
+}
+
+.nuxt-link-exact-active {
+  @apply .border-b-2 .border-brown-darker;
 }
 
 /**

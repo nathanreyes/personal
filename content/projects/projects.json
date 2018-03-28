@@ -1,0 +1,29 @@
+[
+  {
+    "img": "./images/projects/v-calendar/cover.gif",
+    "imgAlt": "Date picker selecting",
+    "imgClass": "py-4",
+    "title": "V-Calendar",
+    "description": "Open source calendar and date picker plugin for Vue.js",
+    "url": "https://vcalendar.io",
+    "technologies": ["vue", "sass"]
+  },
+  {
+    "img": "./images/projects/st-matthews/cover.png",
+    "imgAlt": "Landing page for St. Matthew's Day School",
+    "imgClass": "",
+    "title": "St. Matthew's Day School",
+    "description": "A website for advertising and managing day-to-day operations for St. Matthew's Day School.",
+    "url": "https://stmatthewsdayschool.org",
+    "technologies": ["vue", "vue-router", "sass", "express", "mongodb"]
+  },
+  {
+    "img": "./images/projects/the-well/cover.png",
+    "imgAlt": "Landing page for The Well Pampa",
+    "imgClass": "",
+    "title": "The Well STEM Center",
+    "description": "An advertising and payment processing website for The Well, a STEM education center.",
+    "url": "https://www.thewellpampa.org",
+    "technologies": ["vue", "vue-router", "vuex", "sass", "express", "mongodb", "stripe-api"]
+  }
+]

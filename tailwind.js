@@ -59,8 +59,8 @@ let colors = {
   'brown-darker': '#606052',
   'brown-dark': '#8a8a75',
   brown: '#adad9f',
-  'brown-light': '#c4c4ba',
-  'brown-lighter': '#dcdcd6',
+  'brown-light': '#dcdcd6',
+  'brown-lighter': '#e8e8e3',
   'brown-lightest': '#f3f3f1',
 
   'red-darkest': '#3b0d0c',
@@ -198,6 +198,7 @@ module.exports = {
 
   fonts: {
     sans: [
+      'Source Sans Pro',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',
@@ -800,7 +801,7 @@ module.exports = {
     borderColors: ['responsive', 'hover'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
-    borderWidths: ['responsive'],
+    borderWidths: ['responsive', 'hover'],
     cursor: ['responsive'],
     display: ['responsive'],
     flexbox: ['responsive'],

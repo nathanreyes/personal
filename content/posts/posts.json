@@ -7,6 +7,13 @@
     "summary": "Several months ago, I set out to write part 3 in my series on building an extendable calendar using Vue.js. Unfortunately, I’m sad to report that this is not that article! :( However, it’s not all sad faces because what bore from it was a full-blown calendar plugin. It has been in the works for these past few months, and I’m excited to finally share it with others who love to make things with Vue.js."
   },
   {
+    "title": "Building a Calendar in Vue.js - Date picker using 'Extends'",
+    "date": "2017-07-03",
+    "slug": "building-a-calendar-in-vuejs-using-extends",
+    "img": "./images/building-a-calendar-in-vuejs-using-extends/cover.png",
+    "summary": "Welcome to Part 2 of this series on building an extendable calendar in Vue.js. I’m very excited to share a technique commonly used to functionally extend Vue.js components. If you come from the legacy desktop world as I do, you may have had some trouble when trying to re-implement some of the older techniques you’re more accustomed to when trying to reuse user interface components. I mean, is there subclassing in Vue?…would that be overkill…or should you just create a parent component that wraps your original one and reimplements all of the UI?…what to do, what to do?"
+  },
+  {
     "title": "Building a Calendar in Vue.js - Updates",
     "date": "2017-07-03",
     "slug": "building-a-calendar-in-vuejs-updates",

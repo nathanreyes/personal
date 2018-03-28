@@ -26,7 +26,7 @@ module.exports = {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Raleway|Open+Sans:300,400',
+          'https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700',
       },
     ],
   },
@@ -83,27 +83,27 @@ module.exports = {
         });
       }
       // Disable purgecss until it can support the markdown files
-      if (false) {
-        config.plugins.push(
-          new PurgecssPlugin({
-            // purgecss configuration
-            // https://github.com/FullHuman/purgecss
-            paths: glob.sync([
-              path.join(__dirname, './pages/**/*.vue'),
-              path.join(__dirname, './layouts/**/*.vue'),
-              path.join(__dirname, './components/**/*.vue'),
-              path.join(__dirname, './content/posts/*.md'),
-            ]),
-            extractors: [
-              {
-                extractor: TailwindExtractor,
-                extensions: ['vue', 'md'],
-              },
-            ],
-            whitelist: ['html', 'body', 'nuxt-progress'],
-          }),
-        );
-      }
+      // if (!isDev) {
+      //   config.plugins.push(
+      //     new PurgecssPlugin({
+      //       // purgecss configuration
+      //       // https://github.com/FullHuman/purgecss
+      //       paths: glob.sync([
+      //         path.join(__dirname, './pages/**/*.vue'),
+      //         path.join(__dirname, './layouts/**/*.vue'),
+      //         path.join(__dirname, './components/**/*.vue'),
+      //         path.join(__dirname, './content/posts/*.md'),
+      //       ]),
+      //       extractors: [
+      //         {
+      //           extractor: TailwindExtractor,
+      //           extensions: ['vue', 'md'],
+      //         },
+      //       ],
+      //       whitelist: ['html', 'body', 'nuxt-progress'],
+      //     }),
+      //   );
+      // }
     },
   },
   generate: {
