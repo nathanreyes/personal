@@ -1,13 +1,8 @@
 <template>
-  <div>
-    <h2 class='text-brown-darkest capitalize mb-2'>
-      {{ post.title }}
-    </h2>
-    <p class='text-center text-brown text-sm md:text-left'>
-      {{ post.date.toDateString() }}
-    </p>
-    <div v-html='content'>
-    </div>
+  <div class="max-w-md mx-auto">
+    <h2 class="header">{{ post.title }}</h2>
+    <p class="text-center text-grey-l1 text-sm md:text-left mb-6">{{ post.date.toDateString() }}</p>
+    <div class="blog" v-html="content"></div>
   </div>
 </template>
 

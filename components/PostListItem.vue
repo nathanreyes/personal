@@ -1,19 +1,10 @@
 <template>
-  <div class='post'>
-    <nuxt-link
-      class='link'
-      :to='`/${slug}`'>
-      <h2 class='text-3xl text-center text-brown-darkest hover:text-brown-darker capitalize mb-2 md:text-left'>
-        {{ title }}
-      </h2>
-    </nuxt-link>
-    <p class='text-center text-brown text-sm md:text-left'>
-      {{ date.toDateString() }}
-    </p>
-    <img class='block mx-auto md:w-3/4 mb-6' :src='img' />
-    <p class='summary'>
-      {{ summary }}
-    </p>
+  <div class="post">
+    <nuxt-link class="link no-underline mb-4" :to="`/blog/${slug}`">{{ title }}</nuxt-link>
+    <p
+      class="text-center text-sm text-grey-l2 tracking-wide md:text-left mb-3"
+    >{{ date.toDateString() }}</p>
+    <!-- <p class="text-grey-l1" :style="{ textOverflow: 'ellipsis' }">{{ summary }}</p> -->
   </div>
 </template>
 

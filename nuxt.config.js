@@ -12,8 +12,8 @@ class TailwindExtractor {
 
 module.exports = {
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: 'Nathan Reyes',
     meta: [
@@ -25,8 +25,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700',
+        href: 'https://rsms.me/inter/inter-ui.css',
       },
     ],
   },
@@ -59,20 +58,23 @@ module.exports = {
       );
     },
   },
-  css: ['~/assets/styles/tailwind.scss', '~/assets/styles/github.css'],
+  css: ['~/assets/styles/tailwind.css', '~/assets/styles/github.css'],
   /*
-  ** Customize the progress bar color
-  */
+   ** Customize the progress bar color
+   */
   loading: { color: '#9f9c93' },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     extractCSS: true,
-    postcss: [require('tailwindcss')('./tailwind.js')],
+    postcss: [
+      require('postcss-cssnext')(),
+      require('tailwindcss')('./tailwind.js'),
+    ],
     /*
-    ** Run ESLint on save
-    */
+     ** Run ESLint on save
+     */
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -107,6 +109,6 @@ module.exports = {
     },
   },
   generate: {
-    routes: posts.map(p => `/${p.slug}`),
+    routes: posts.map(p => `/blog/${p.slug}`),
   },
 };

@@ -2,28 +2,29 @@
   {
     "img": "https://res.cloudinary.com/dqgcfqzpk/image/upload/v1522242158/personal/projects/v-calendar/cover.gif",
     "imgAlt": "Date picker selecting",
-    "imgClass": "py-4",
     "title": "V-Calendar",
-    "description": "Open source calendar and date picker plugin for Vue.js",
+    "description": "V-Calendar is an open source calendar and date picker plugin for Vue.js. It uses attributes to decorate the calendar with various visual indicators including highlighted date regions, dots, bars, content styles and more. It can even display simple tooltips or popovers using custom slot content.",
     "url": "https://vcalendar.io",
+    "githubUrl": "https://github.com/nathanreyes/v-calendar",
+    "tintColor": "#66B4CC",
     "technologies": ["vue", "sass"]
   },
   {
     "img": "http://res.cloudinary.com/dqgcfqzpk/image/upload/c_scale,w_800/v1522241991/personal/projects/st-matthews/cover.png",
     "imgAlt": "Landing page for St. Matthew's Day School",
-    "imgClass": "",
     "title": "St. Matthew's Day School",
     "description": "A website for advertising and managing day-to-day operations for St. Matthew's Day School.",
     "url": "https://stmatthewsdayschool.org",
+    "tintColor": "HSL(206, 74%, 60%)",
     "technologies": ["vue", "vue-router", "sass", "express", "mongodb"]
   },
   {
     "img": "http://res.cloudinary.com/dqgcfqzpk/image/upload/c_scale,w_800/v1522242110/personal/projects/the-well/cover.png",
     "imgAlt": "Landing page for The Well Pampa",
-    "imgClass": "",
     "title": "The Well STEM Center",
     "description": "An advertising and payment processing website for The Well, a STEM education center.",
     "url": "https://www.thewellpampa.org",
+    "tintColor": "HSL(14, 100%, 70%)",
     "technologies": ["vue", "vue-router", "vuex", "sass", "express", "mongodb", "stripe-api"]
   }
 ]

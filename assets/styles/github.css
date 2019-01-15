@@ -8,30 +8,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   position: relative;
   display: block;
   overflow-x: auto;
-  padding: 1.5em;
-  color: #333;
-  background: #f3f3f1;
-  border: 1px solid #e7e6e4;
+  @apply .bg-grey-l5 .text-sm .text-grey-d4 .border .shadow-lg .rounded-lg .p-4 .-mx-6 .my-0;
 }
 
 .hljs-lang {
-  color: #aaa;
-  font-weight: 300;
-  font-size: 0.8rem;
   position: absolute;
   right: 10px;
   top: 8px;
-  text-transform: uppercase;
+  @apply .text-sm .text-grey .font-medium .uppercase;
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #998;
   font-style: italic;
-}
-
-.hljs-keyword {
-  color: #d73a49;
+  @apply .text-grey-l2;
 }
 
 /* .hljs-keyword,
@@ -45,23 +35,27 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag .hljs-attr {
-  color: #005cc5;
+  @apply .text-green;
+}
+
+.hljs-keyword {
+  @apply .text-red;
 }
 
 .hljs-string,
 .hljs-doctag {
-  color: #d14;
+  @apply .text-red;
 }
 
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
-  color: #900;
+  @apply .text-red;
   font-weight: bold;
 }
 
 .hljs-title {
-  color: #6f42c1;
+  @apply .text-purple;
 }
 
 .hljs-subst {
@@ -97,8 +91,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 .hljs-meta {
-  color: #999;
-  font-weight: bold;
+  @apply .text-grey .font-medium;
 }
 
 .hljs-deletion {

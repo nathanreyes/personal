@@ -1,16 +1,13 @@
 <template>
   <div class="home flex flex-col min-h-screen relative font-sans">
     <div class="navbar px-6">
-      <div class="container max-w-lg h-full mx-auto flex items-baseline justify-between">
-        <nuxt-link to="/" class="lg:text-lg font-medium no-underline">
-          Nathan
-          <span class="hidden sm:inline text-blue-l4">Reyes</span>
-        </nuxt-link>
+      <div class="container h-full mx-auto flex flex-col items-center relative">
+        <!-- <div class="profile-img mt-8 md:absolute md:mt-0"></div> -->
         <nav-menu></nav-menu>
       </div>
       <a
         href="https://github.com/nathanreyes"
-        class="github-corner hidden md:inline"
+        class="github-corner"
         aria-label="View source on Github"
       >
         <svg
@@ -65,7 +62,7 @@
       </style>
     </div>
     <div class="flex-grow my-4">
-      <div class="px-6 pb-10 text-lg text-grey-l3 leading-normal">
+      <div class="container mx-auto px-6 pb-10 text-lg text-grey-l3 leading-normal">
         <nuxt/>
       </div>
     </div>
