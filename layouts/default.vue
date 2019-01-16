@@ -1,10 +1,15 @@
 <template>
   <div class="home flex flex-col min-h-screen relative font-sans">
-    <div class="navbar px-6">
-      <div class="container max-w-lg h-full mx-auto flex items-baseline justify-between">
-        <nuxt-link to="/" class="lg:text-lg font-medium no-underline">
+    <div class="navbar px-6 py-6 md:py-8">
+      <div
+        class="container max-w-lg h-full mx-auto flex flex-col md:flex-row items-center md:items-baseline justify-between"
+      >
+        <nuxt-link
+          to="/"
+          class="text-sm md:text-base mb-6 md:mb-0 lg:text-lg font-medium no-underline"
+        >
           Nathan
-          <span class="hidden sm:inline text-blue-l4">Reyes</span>
+          <span class="text-blue-l4">Reyes</span>
         </nuxt-link>
         <nav-menu></nav-menu>
       </div>
@@ -108,9 +113,5 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-}
-
-.navbar-menu {
-  min-height: 100px;
 }
 </style>
