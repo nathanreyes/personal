@@ -1,5 +1,5 @@
 <template>
-  <ul class="list-reset navbar-menu flex justify-center items-center pr-6">
+  <ul class="flex justify-center items-center pr-6">
     <li>
       <nuxt-link :class="linkClass" to="/about">About</nuxt-link>
     </li>
@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       linkClass:
-        'text-grey-l1 lg:text-lg no-underline font-medium pb-2 mx-4 border-b-2 border-transparent hover:text-green-l4 hover:border-green-l4',
+        'text-gray-500 lg:text-lg font-medium pb-2 mx-4 border-b-2 border-transparent hover:text-green-200 hover:border-green-200',
     };
   },
 };

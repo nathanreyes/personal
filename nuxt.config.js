@@ -68,10 +68,7 @@ module.exports = {
    */
   build: {
     extractCSS: true,
-    postcss: [
-      require('postcss-cssnext')(),
-      require('tailwindcss')('./tailwind.js'),
-    ],
+    postcss: [require('postcss-cssnext')(), require('tailwindcss')],
     /*
      ** Run ESLint on save
      */

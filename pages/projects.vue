@@ -1,19 +1,20 @@
 <template>
-  <div class="max-w-xl mx-auto">
+  <div class="max-w-3xl mx-auto">
     <div
       v-for="{ img, imgAlt, imgClass, title, description, url, githubUrl, tintColor } in projects"
       :key="title"
-      class="flex flex-col md:flex-row w-full bg-grey-d3 shadow-inner rounded-lg overflow-hidden mb-12"
+      class="flex flex-col md:flex-row w-full bg-gray-800 shadow-inner rounded-lg overflow-hidden mb-12"
     >
       <div class="flex flex-col w-full md:w-1/2 py-6 px-8">
         <h3 class="header">{{ title }}</h3>
-        <div class="border-b-4 border-grey w-8 mb-6"></div>
+        <div class="border-b-4 border-gray-500 w-8 mb-6"></div>
         <p class="flex-grow mb-4">{{ description }}</p>
-        <ul class="list-reset text-sm">
+        <ul class="text-sm">
+          <!--Site Link-->
           <li class="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="text-blue-l3 fill-current w-6 h-6 mr-4"
+              class="text-blue-300 fill-current w-6 h-6 mr-4"
               viewBox="0 0 20 20"
             >
               <path
@@ -22,10 +23,11 @@
             </svg>
             <a :href="url" class="link">{{ url }}</a>
           </li>
+          <!--Github Link-->
           <li class="flex items-center mt-4" v-if="githubUrl">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="text-blue-l3 fill-current w-6 h-6 mr-4"
+              class="text-blue-300 fill-current w-6 h-6 mr-4"
               viewBox="0 0 24 24"
             >
               <path
@@ -41,9 +43,9 @@
         :style="{ backgroundColor: tintColor }"
       >
         <div
-          class="w-full mx-6 md:my-6 mt-8 md:ml-8 -mb-8 md:-mr-8 rounded-lg overflow-hidden shadow-lg bg-cover h-96"
-          :style="{ backgroundImage: `url(${img})`, backgroundPosition: 'top center' }"
-        ></div>
+          class="w-full mx-6 md:my-6 mt-8 md:ml-8 -mb-8 md:-mr-8 rounded-lg overflow-hidden shadow-lg bg-cover"
+          :style="{ height: '24rem', backgroundImage: `url(${img})`, backgroundPosition: 'top center' }"
+        />
       </div>
     </div>
   </div>

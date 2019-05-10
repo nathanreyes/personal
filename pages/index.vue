@@ -1,18 +1,18 @@
 <template>
-  <div class="xl:max-w-lg mx-auto">
+  <div class="xl:max-w-3xl mx-auto">
     <div class="hidden lg:flex mt-10 mb-8">
       <div class="max-w-xs flex-grow"></div>
-      <h3 class="text-blue-l4 text-2xl font-medium">Howdy!</h3>
+      <h3 class="text-blue-200 text-2xl font-medium">Howdy!</h3>
     </div>
     <div class="flex flex-col items-center lg:flex-row lg:items-start">
       <div class="max-w-xs flex-grow mb-4 lg:mb-0">
         <div class="profile-img shadow-md"></div>
       </div>
-      <div class="mt-10 max-w-sm text-center lg:text-left lg:mt-0">
-        <h3 class="lg:hidden text-blue-l4 text-2xl font-medium mb-6">Howdy!</h3>
-        <p class="text-lg leading-normal mb-6">
+      <div class="mt-10 max-w-md text-center lg:text-left lg:mt-0">
+        <h3 class="lg:hidden text-blue-200 text-2xl font-medium mb-6">Howdy!</h3>
+        <p class="text-lg mb-6">
           I’m
-          <span class="text-grey-l5 font-medium">Nathan Reyes</span> and I like to make awesome stuff for the web.
+          <span class="text-gray-100 font-medium">Nathan Reyes</span> and I like to make awesome stuff for the web.
           This includes building content management websites for community organizations like
           <a
             href="https://redeemerpampa.com"
@@ -25,19 +25,19 @@
           >V-Calendar</a>, a calendar and datepicker plugin for the popular frontend javascript framework Vue.js.
         </p>
         <p
-          class="text-lg leading-normal mb-10"
+          class="text-lg mb-8"
         >Simply put, my passion lies in making life easier for folks when it comes to using and developing software.</p>
       </div>
     </div>
     <div class="flex flex-col items-center lg:flex-row">
       <div class="hidden lg:block max-w-xs flex-grow text-right">
-        <h2 class="text-green-l4 font-normal mb-3 mr-16">Software Developer</h2>
+        <h2 class="text-green-200 text-3xl font-normal mb-3 mr-16">Software Developer</h2>
         <p class="uppercase text-sm text-blue-l5 tracking-wide font-medium mr-16">Web & Desktop</p>
       </div>
       <div class="flex flex-col items-center lg:flex-row lg:items-baseline text-lg">
         <nuxt-link
           to="/about"
-          class="cursor-pointer no-underline bg-green-l4 hover:bg-green-l3 text-green-d4 font-semibold px-6 py-4 rounded-full mr-2 shadow-lg hover:shadow-md"
+          class="cursor-pointer bg-green-200 hover:bg-green-300 text-green-800 font-semibold px-6 py-3 rounded-full mr-2 shadow-lg hover:shadow-md"
         >Read more about me...</nuxt-link>
         <div class="mt-4">
           or
@@ -54,7 +54,7 @@
           viewBox="0 0 94 72"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="mt-10 mr-16 fill-current text-grey"
+          class="mt-10 mr-16 fill-current text-gray-400 opacity-25"
         >
           <rect x="88" y="70" width="6" height="2" rx="1"></rect>
           <rect x="66" y="70" width="6" height="2" rx="1"></rect>
@@ -87,6 +87,7 @@ export default {
   top: 20px;
   width: 260px;
   height: 260px;
+  margin-top: 20px;
   border-radius: 10px;
   overflow: hidden;
   background-image: url('~/assets/images/profile.jpg');

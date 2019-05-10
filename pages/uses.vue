@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-md mx-auto">
     <h3 class="header">Frontend</h3>
-    <ul class="list-reset">
+    <ul>
       <li>Vue.js</li>
     </ul>
     <h3 class="header">Backend</h3>

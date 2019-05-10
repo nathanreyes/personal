@@ -1,8 +1,10 @@
 <template>
-  <div class="home flex flex-col min-h-screen relative font-sans">
-    <site-header/>
-    <div class="flex-grow my-4">
-      <div class="px-6 pb-10 text-lg text-gray-400 leading-normal">
+  <div class="flex flex-col min-h-screen relative font-sans bg-white">
+    <div class="home">
+      <site-header/>
+    </div>
+    <div class="flex-grow py-4">
+      <div class="px-6 pb-10 text-lg text-gray-800 leading-normal">
         <nuxt/>
       </div>
     </div>
@@ -19,11 +21,18 @@ export default {
     SiteHeader,
     SiteFooter,
   },
+  data() {
+    return {
+      linkClass:
+        'text-gray-100 lg:text-lg font-medium pb-2 mx-4 border-b-2 border-transparent hover:text-green-l4 hover:border-green-l4',
+    };
+  },
 };
 </script>
 
 <style scoped>
 .home {
+  /* background-color: red; */
   background-image: linear-gradient(to bottom right, #3d4457, #3e5679, #3e5679);
 }
 

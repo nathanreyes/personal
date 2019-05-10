@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-md mx-auto">
+  <div class="max-w-xl mx-auto">
     <div class="mb-10">
       <h3 class="header">Brief</h3>
       <p
@@ -9,7 +9,7 @@
         class="mb-4"
       >I grew up in Canadian, a small, charming Texas town, and later attended college at Texas A&M University in College Station, TX, where I obtained a bachelor's degree in Electrical Engineering with a minor in Mathematics.</p>
       <p class="mb-4 text-center">
-        <span class="text-grey-l4 font-medium">Gig'em!</span>
+        <span class="text-gray-400 font-medium">Gig'em!</span>
       </p>
       <p class="mb-4">
         I currently work full-time developing Windows UWP apps for Turnkey Computer Solutions, a software company serving the animal health industry.
@@ -19,12 +19,9 @@
           class="link"
         >V-Calendar</a>, an open source calendar and datepicker plugin that I created for Vue.js.
       </p>
-      <p
-        class="mb-4"
-      >I am desktop by day, web by night, you could say. If I were to start a greenfield project today, it would be built using
-        <nuxt-link class="link" to="/uses">these tools and technologies</nuxt-link>
-
-        .
+      <p class="mb-4">
+        I am desktop by day, web by night, you could say. If I were to start a greenfield project today, it would be built using
+        <nuxt-link class="link" to="/uses">these tools and technologies</nuxt-link>.
       </p>
     </div>
     <div class="mb-10">
@@ -70,7 +67,8 @@
         Like other developers, my career path has been unique and somewhat unpredictable.
         Through it all, my mind returns to a single idea that has driven me: the ability to constantly hit refresh with new opportunities and ideas.
       </p>
-      <p class="mb-4">Follow my
+      <p class="mb-4">
+        Follow my
         <nuxt-link to="/blog" class="link mr-1">blog</nuxt-link>to follow my thoughts on productivity, technologies and personal growth.
       </p>
     </div>

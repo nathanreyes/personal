@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm mx-auto">
+  <div class="max-w-md mx-auto">
     <p
       class="mb-6 text-center"
     >If you felt encouraged or informed by this blog, or would like to hire me, please reach out.</p>
@@ -16,20 +16,20 @@
         <input type="text" :class="controlClass" placeholder="Name">
       </div>
       <div class="w-full mb-4">
-        <textarea :class="controlClass" placeholder="Message" rows="4"></textarea>
+        <textarea :class="controlClass" placeholder="Message" rows="4"/>
       </div>
       <button
-        class="bg-blue-l3 hover:bg-blue-l2 text-blue-d4 text-xl font-medium w-full px-6 py-4 rounded shadow-lg hover:shadow-md hover:text-blue-d3"
+        class="bg-blue-300 hover:bg-blue-400 text-blue-800 text-xl font-medium w-full px-6 py-4 rounded shadow-lg hover:shadow-md hover:text-blue-d3"
       >Submit</button>
     </form>
     <p class="mb-16 border-t-2 border-blue-l2 w-1/2 mx-auto opacity-25"/>
     <p class="mb-8 text-center">You can also get in contact via the following:</p>
     <div class="flex items-center">
-      <ul class="mx-auto list-reset text-xl">
+      <ul class="mx-auto text-xl">
         <li class="flex items-center mb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="text-blue-l3 fill-current w-8 h-8 mr-6"
+            class="text-blue-200 fill-current w-8 h-8 mr-6"
             viewBox="0 0 24 24"
           >
             <path
@@ -38,14 +38,14 @@
           </svg>
           <div class="flex items-baseline">
             <span class="w-24">Twitter:</span>
-            <a href="#" class="link no-underline">@natedoggit</a>
+            <a href="#" class="link">@natedoggit</a>
           </div>
         </li>
         <li class="flex items-center mb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            class="text-blue-l3 fill-current w-8 h-8 mr-6"
+            class="text-blue-200 fill-current w-8 h-8 mr-6"
           >
             <path
               class="primary"
@@ -55,13 +55,13 @@
           </svg>
           <div class="flex items-baseline">
             <span class="w-24">Email:</span>
-            <a href="mailto:nathanreyes@me.com" class="link no-underline">nathanreyes@me.com</a>
+            <a href="mailto:nathanreyes@me.com" class="link">nathanreyes@me.com</a>
           </div>
         </li>
         <li class="flex items-center mb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="text-blue-l3 fill-current w-8 h-8 mr-6"
+            class="text-blue-200 fill-current w-8 h-8 mr-6"
             viewBox="0 0 24 24"
           >
             <path
@@ -70,7 +70,7 @@
           </svg>
           <div class="flex items-baseline">
             <span class="w-24">Github:</span>
-            <a href="https://github.com/nathanreyes" class="link no-underline">nathanreyes</a>
+            <a href="https://github.com/nathanreyes" class="link">nathanreyes</a>
           </div>
         </li>
       </ul>
@@ -84,7 +84,7 @@ export default {
   data() {
     return {
       controlClass:
-        'block w-full bg-blue-l5 text-xl px-4 py-4 rounded outline-none shadow-md',
+        'block w-full bg-blue-100 text-xl text-gray-800 px-4 py-4 rounded outline-none shadow-md',
     };
   },
 };

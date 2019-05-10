@@ -8,20 +8,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   position: relative;
   display: block;
   overflow-x: auto;
-  @apply .bg-grey-l5 .text-sm .text-grey-d4 .border .shadow-lg .rounded-lg .p-4 .-mx-6 .my-0;
+  /* @apply .bg-gray-l00 .text-sm .text-gray-800 .border .shadow-lg .rounded-lg .p-4 .-mx-6 .my-0; */
 }
 
 .hljs-lang {
   position: absolute;
   right: 10px;
   top: 8px;
-  @apply .text-sm .text-grey .font-medium .uppercase;
+  @apply .text-sm .text-gray-500 .font-medium .uppercase;
 }
 
 .hljs-comment,
 .hljs-quote {
   font-style: italic;
-  @apply .text-grey-l2;
+  @apply .text-gray-200;
 }
 
 /* .hljs-keyword,
@@ -35,27 +35,27 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag .hljs-attr {
-  @apply .text-green;
+  @apply .text-green-500;
 }
 
 .hljs-keyword {
-  @apply .text-red;
+  @apply .text-red-500;
 }
 
 .hljs-string,
 .hljs-doctag {
-  @apply .text-red;
+  @apply .text-red-500;
 }
 
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
-  @apply .text-red;
+  @apply .text-red-500;
   font-weight: bold;
 }
 
 .hljs-title {
-  @apply .text-purple;
+  @apply .text-purple-500;
 }
 
 .hljs-subst {
@@ -91,7 +91,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 .hljs-meta {
-  @apply .text-grey .font-medium;
+  @apply .text-gray-500 .font-medium;
 }
 
 .hljs-deletion {
