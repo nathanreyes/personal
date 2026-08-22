@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Nathan Reyes',
+  description = 'Nathan Reyes — software developer in Amarillo, TX. Creator of V-Calendar.',
+} = Astro.props;
+
+const fullTitle = title === 'Nathan Reyes' ? title : `${title} — Nathan Reyes`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:m-3 focus:bg-term-green focus:text-term-bg focus:px-3 focus:py-1"
+      >skip to content</a
+    >
+
+    <header class="border-b border-term-line">
+      <div
+        class="mx-auto max-w-3xl px-6 py-4 flex flex-wrap items-center justify-between gap-3"
+      >
+        <a
+          href="/"
+          class="text-term-bright hover:text-term-green transition-colors tracking-tight"
+        >
+          Nathan Reyes
+        </a>
+        <Nav />
+      </div>
+    </header>
+
+    <main id="main" class="flex-1 w-full mx-auto max-w-3xl px-6 py-12">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

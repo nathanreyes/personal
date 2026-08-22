@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import { projects } from '../data/projects';
+
+const shipped = projects.filter((p) => !p.spec);
+const concepts = projects.filter((p) => p.spec);
+
+const groups = [
+  { heading: 'Shipped', items: shipped },
+  { heading: 'Concept & spec work', items: concepts },
+].filter((g) => g.items.length > 0);
+
+const strip = (u: string) =>
+  u.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/$/, '');
+---
+
+<Base title="Projects" description="Selected work by Nathan Reyes — open source libraries, products and client sites.">
+  <header class="mb-12">
+    <h1 class="text-2xl text-term-bright tracking-tight mb-3">Projects</h1>
+    <p class="max-w-prose text-term-dim">
+      Open source libraries, products and client sites. Most run on Cloudflare
+      Workers; source is linked where the repository is public.
+    </p>
+  </header>
+
+  <div class="space-y-14">
+    {
+      groups.map((group) => (
+        <section>
+          <h2 class="text-sm uppercase tracking-widest text-term-green mb-6">
+            {group.heading}
+          </h2>
+
+          <ul class="space-y-10">
+            {group.items.map((p) => (
+              <li class="border-l-2 border-term-line hover:border-term-green transition-colors pl-5">
+                <div class="flex flex-wrap items-baseline gap-x-3 mb-2">
+                  <h3 class="text-term-bright text-lg tracking-tight">{p.name}</h3>
+                  <span class="text-xs text-term-dim">{p.tagline}</span>
+                </div>
+
+                <p class="max-w-prose mb-4">{p.description}</p>
+
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm mb-3">
+                  {p.url && (
+                    <a class="link" href={p.url}>
+                      {strip(p.url)}
+                    </a>
+                  )}
+                  {p.repo && (
+                    <a class="link" href={p.repo}>
+                      Source
+                    </a>
+                  )}
+                </div>
+
+                <ul class="flex flex-wrap gap-2">
+                  {p.tech.map((t) => (
+                    <li class="text-xs text-term-dim border border-term-line px-2 py-0.5">
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</Base>

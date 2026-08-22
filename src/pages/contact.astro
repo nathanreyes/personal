@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const channels = [
+  { key: 'email', value: 'nathanreyes@me.com', href: 'mailto:nathanreyes@me.com' },
+  { key: 'github', value: 'nathanreyes', href: 'https://github.com/nathanreyes' },
+  { key: 'resume', value: 'resume.pdf', href: '/resume.pdf' },
+];
+
+const errors: Record<string, string> = {
+  invalid: 'Please check each field and try again.',
+  rate: 'Too many submissions from your connection. Please wait a minute and retry.',
+  send: "I couldn't send that. Please email me directly instead.",
+};
+const error = errors[Astro.url.searchParams.get('error') ?? ''];
+
+const field =
+  'block w-full bg-term-panel border border-term-line text-term-bright font-mono px-3 py-2 placeholder:text-term-dim focus:border-term-green focus:outline-none transition-colors';
+---
+
+<Base title="Contact" description="Get in touch with Nathan Reyes.">
+  <h1 class="text-2xl text-term-bright tracking-tight mb-3">Contact</h1>
+
+  <p class="max-w-prose mb-10">
+    If you felt encouraged or informed by this blog, or would like to hire me,
+    please reach out. I'd love to hear from you.
+  </p>
+
+  {
+    error && (
+      <p
+        role="alert"
+        class="max-w-md border border-term-red text-term-red text-sm px-3 py-2 mb-6"
+      >
+        {error}
+      </p>
+    )
+  }
+
+  <form method="POST" action="/api/contact" class="max-w-md space-y-4 mb-16">
+    <!-- Honeypot: hidden from people, irresistible to bots. -->
+    <p class="hidden" aria-hidden="true">
+      <label>Leave this empty: <input name="website" tabindex="-1" autocomplete="off" /></label>
+    </p>
+
+    <div>
+      <label class="block text-sm text-term-dim mb-1" for="name">name</label>
+      <input
+        class={field}
+        id="name"
+        name="name"
+        type="text"
+        minlength="2"
+        maxlength="80"
+        required
+      />
+    </div>
+
+    <div>
+      <label class="block text-sm text-term-dim mb-1" for="email">email</label>
+      <input class={field} id="email" name="email" type="email" required />
+    </div>
+
+    <div>
+      <label class="block text-sm text-term-dim mb-1" for="message">message</label>
+      <textarea
+        class={field}
+        id="message"
+        name="message"
+        rows="5"
+        minlength="10"
+        maxlength="4000"
+        required></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="bg-term-green text-term-bg px-4 py-2 hover:bg-term-bright transition-colors"
+    >
+      send
+    </button>
+  </form>
+
+  <SectionHeading>Elsewhere</SectionHeading>
+  <ul class="space-y-2">
+    {
+      channels.map((c) => (
+        <li class="flex flex-wrap items-baseline gap-x-3">
+          <span class="text-term-dim text-sm w-16">{c.key}</span>
+          <a class="link" href={c.href}>
+            {c.value}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

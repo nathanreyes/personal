@@ -1,0 +1,204 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'SFMono';
+  src: url('/SFMono-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@theme {
+  --font-mono: 'SFMono', ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo,
+    Consolas, 'Liberation Mono', monospace;
+
+  /* Terminal palette */
+  --color-term-bg: #0b0f0e;
+  --color-term-panel: #111716;
+  --color-term-line: #1e2a27;
+  --color-term-dim: #8b9b95;
+  --color-term-fg: #b8c4bf;
+  --color-term-bright: #e8efec;
+  --color-term-green: #5ef08f;
+  --color-term-amber: #f0b45e;
+  --color-term-cyan: #5ecdf0;
+  --color-term-red: #f0685e;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scrollbar-color: var(--color-term-line) var(--color-term-bg);
+  }
+
+  body {
+    background-color: var(--color-term-bg);
+    color: var(--color-term-fg);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-term-green);
+    color: var(--color-term-bg);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-term-green);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Inline link: underlined on hover, like a terminal hyperlink */
+  .link {
+    color: var(--color-term-green);
+    border-bottom: 1px solid color-mix(in oklab, var(--color-term-green) 35%, transparent);
+    transition: color 120ms, border-color 120ms;
+  }
+  .link:hover {
+    color: var(--color-term-bright);
+    border-bottom-color: var(--color-term-bright);
+  }
+
+  /* Blinking block cursor */
+  .cursor::after {
+    content: '';
+    display: inline-block;
+    width: 0.55em;
+    height: 1.05em;
+    margin-left: 0.15em;
+    vertical-align: text-bottom;
+    background-color: var(--color-term-green);
+    animation: blink 1.1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor::after { animation: none; }
+  }
+}
+
+@layer components {
+  /* Long-form markdown, styled for the terminal aesthetic. */
+  .prose-term {
+    max-width: 68ch;
+  }
+
+  .prose-term > * + * {
+    margin-top: 1.15em;
+  }
+
+  .prose-term h1,
+  .prose-term h2,
+  .prose-term h3,
+  .prose-term h4 {
+    color: var(--color-term-bright);
+    line-height: 1.35;
+    margin-top: 2.25em;
+    margin-bottom: 0.75em;
+  }
+
+  .prose-term h2::before,
+  .prose-term h3::before {
+    content: '\25B8';
+    color: var(--color-term-green);
+    margin-right: 0.6ch;
+  }
+
+  .prose-term h1 { font-size: 1.5rem; }
+  .prose-term h2 { font-size: 1.25rem; }
+  .prose-term h3 { font-size: 1.05rem; }
+  .prose-term h4 { font-size: 1rem; }
+
+  .prose-term a {
+    color: var(--color-term-green);
+    border-bottom: 1px solid color-mix(in oklab, var(--color-term-green) 35%, transparent);
+  }
+  .prose-term a:hover {
+    color: var(--color-term-bright);
+    border-bottom-color: var(--color-term-bright);
+  }
+
+  .prose-term strong {
+    color: var(--color-term-bright);
+    font-weight: 400;
+  }
+
+  .prose-term ul,
+  .prose-term ol {
+    padding-left: 1.5em;
+  }
+  .prose-term ul { list-style: none; }
+  .prose-term ol { list-style: decimal; }
+  .prose-term li { margin-top: 0.5em; }
+  .prose-term ul > li::before {
+    content: '-';
+    color: var(--color-term-green);
+    margin-left: -1.5em;
+    margin-right: 0.75em;
+  }
+  .prose-term ol > li::marker { color: var(--color-term-green); }
+
+  .prose-term blockquote {
+    border-left: 2px solid var(--color-term-line);
+    padding-left: 1.25em;
+    color: var(--color-term-dim);
+  }
+
+  .prose-term img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 2em auto;
+    border: 1px solid var(--color-term-line);
+  }
+
+  /* Inline code — Shiki handles code blocks. */
+  .prose-term :not(pre) > code {
+    background-color: var(--color-term-panel);
+    border: 1px solid var(--color-term-line);
+    color: var(--color-term-amber);
+    padding: 0.1em 0.4em;
+    font-size: 0.875em;
+  }
+
+  .prose-term pre {
+    background-color: var(--color-term-panel) !important;
+    border: 1px solid var(--color-term-line);
+    padding: 1em 1.15em;
+    overflow-x: auto;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+
+  .prose-term hr {
+    border: 0;
+    border-top: 1px solid var(--color-term-line);
+    margin: 2.5em 0;
+  }
+
+  .prose-term table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    display: block;
+    overflow-x: auto;
+  }
+  .prose-term th,
+  .prose-term td {
+    border: 1px solid var(--color-term-line);
+    padding: 0.5em 0.75em;
+    text-align: left;
+  }
+  .prose-term th { color: var(--color-term-bright); font-weight: 400; }
+}

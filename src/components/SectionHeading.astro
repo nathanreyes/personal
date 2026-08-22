@@ -1,0 +1,19 @@
+---
+interface Props {
+  /** Heading level. Defaults to h2. */
+  as?: 'h2' | 'h3';
+  class?: string;
+}
+
+const { as: Tag = 'h2', class: className } = Astro.props;
+---
+
+<Tag
+  class:list={[
+    'flex items-center gap-3 text-term-bright text-lg tracking-tight mb-5',
+    className,
+  ]}
+>
+  <span class="text-term-green select-none" aria-hidden="true">&#9656;</span>
+  <slot />
+</Tag>

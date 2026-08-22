@@ -1,22 +1,51 @@
 # personal
 
-> My personal site.
+My personal site — [nathanreyes.com](https://nathanreyes.com).
 
-## Build Setup
+Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com).
+Static pages are served from Cloudflare Workers assets; only the contact form
+reaches the Worker.
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+## Develop
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+Requires Node 22+ (see `.nvmrc`).
 
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
+```sh
+npm install
+npm run dev        # astro dev  -> http://localhost:4321
+npm run build      # -> dist/
+npm run preview    # serve the built site
+npm run check      # type-check .astro / .ts
+npx wrangler dev   # run the built site behind the Worker
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+## Deploy
+
+```sh
+npm run deploy     # astro build && wrangler deploy
+```
+
+`wrangler.jsonc` declares the custom domains, so deploying reconciles routes
+against that file — a domain added only in the dashboard is dropped on the next
+deploy. After changing bindings, regenerate types with `npm run cf-typegen`.
+
+The contact form emails `CONTACT_EMAIL`; that address must be verified as a
+Cloudflare Email Routing destination before the first send. Submissions are
+capped per visitor IP by the `CONTACT_RATE_LIMIT` binding.
+
+## Content
+
+Blog posts are markdown in `src/content/blog/`, validated by the schema in
+`src/content.config.ts`:
+
+```yaml
+---
+title: 'Post title'
+date: 2026-01-31
+summary: 'Shown on the blog index.'
+cover: 'https://…' # optional
+draft: false # omit to publish
+---
+```
+
+Projects live in `src/data/projects.ts`, typed by the `Project` interface.
