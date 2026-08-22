@@ -1,13 +1,15 @@
-*.DS_STORE
+# build output
+dist/
+.astro/
 
 # dependencies
-node_modules
+node_modules/
 
-# logs
-npm-debug.log
+# wrangler
+.wrangler/
+.dev.vars
 
-# Nuxt build
-.nuxt
-
-# Nuxt generate
-dist
+# local env / tooling
+.env
+.env.production
+.DS_Store

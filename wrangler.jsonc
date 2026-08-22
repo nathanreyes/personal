@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "nathanreyes",
+  "main": "./worker/index.ts",
+  "compatibility_date": "2026-08-21",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Declared here, not just in the dashboard: `wrangler deploy` reconciles
+  // triggers against this file, so a custom domain that only exists in the
+  // dashboard gets dropped on the next deploy.
+  "routes": [
+    { "pattern": "nathanreyes.com", "custom_domain": true },
+    { "pattern": "www.nathanreyes.com", "custom_domain": true }
+  ],
+
+  // The site stays fully static. Only the contact form reaches the Worker.
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "force-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/contact"]
+  },
+
+  // Delivers contact form submissions. The address must be verified as an
+  // Email Routing destination before the first send.
+  "send_email": [
+    {
+      "name": "CONTACT_EMAIL",
+      "destination_address": "nathanreyes.me@gmail.com"
+    }
+  ],
+
+  // Caps submissions per visitor IP. `period` accepts only 10 or 60.
+  "ratelimits": [
+    {
+      "name": "CONTACT_RATE_LIMIT",
+      "namespace_id": "1001",
+      "simple": { "limit": 3, "period": 60 }
+    }
+  ],
+
+  "observability": { "enabled": true }
+}

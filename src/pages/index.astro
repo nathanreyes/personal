@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import Prompt from '../components/Prompt.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { getCollection } from 'astro:content';
+import { projects } from '../data/projects';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const latest = posts.slice(0, 3);
+const featured = projects.filter((p) => p.featured);
+---
+
+<Base>
+  <!-- Hero -->
+  <section class="mb-16">
+    <Prompt cmd="whoami" cursor class="mb-5" />
+
+    <h1 class="text-3xl text-term-bright tracking-tight mb-2">Nathan Reyes</h1>
+    <p class="text-term-green mb-6">
+      Software developer &middot; Amarillo, TX
+    </p>
+
+    <div class="space-y-4 max-w-prose">
+      <p>
+        I build software for the web, from open source libraries to sites and
+        products for small businesses. I created{' '}
+        <a class="link" href="https://vcalendar.io">V-Calendar</a>, a Vue.js
+        calendar and date picker used by thousands of projects, and I run{' '}
+        <a class="link" href="https://noctalabs.com">Nocta Labs</a>, a studio
+        serving the Texas Panhandle.
+      </p>
+      <p>
+        My passion lies in making life easier for folks when it comes to using
+        and developing software.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-x-5 gap-y-2 mt-8 text-sm">
+      <a class="link" href="/projects/">View my work</a>
+      <a class="link" href="/resume.pdf">Download resume</a>
+      <a class="link" href="mailto:nathanreyes@me.com">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- Selected work -->
+  <section class="mb-16">
+    <SectionHeading>Selected work</SectionHeading>
+
+    <ul class="space-y-6">
+      {
+        featured.map((p) => (
+          <li>
+            <div class="flex flex-wrap items-baseline gap-x-3 mb-1">
+              <a class="link" href={p.url ?? p.repo}>
+                {p.name}
+              </a>
+              <span class="text-xs text-term-dim">{p.tagline}</span>
+            </div>
+            <p class="text-sm text-term-dim max-w-prose">{p.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a
+      class="inline-block mt-6 text-sm text-term-dim hover:text-term-bright transition-colors"
+      href="/projects/">All projects &rarr;</a
+    >
+  </section>
+
+  <!-- Writing -->
+  <section class="mb-16">
+    <SectionHeading>Writing</SectionHeading>
+
+    <ul class="space-y-3">
+      {
+        latest.map((post) => (
+          <li class="flex flex-wrap items-baseline gap-x-3">
+            <time
+              class="text-sm text-term-dim tabular-nums shrink-0"
+              datetime={post.data.date.toISOString()}
+            >
+              {post.data.date.getFullYear()}
+            </time>
+            <a class="link" href={`/blog/${post.id}/`}>
+              {post.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a
+      class="inline-block mt-6 text-sm text-term-dim hover:text-term-bright transition-colors"
+      href="/blog/">All posts &rarr;</a
+    >
+  </section>
+</Base>

@@ -1,0 +1,20 @@
+---
+/**
+ * A single shell-prompt flourish. Used sparingly — on the home hero and 404
+ * only. Section headings use SectionHeading.astro so the page reads as a
+ * document, not a terminal session.
+ */
+interface Props {
+  cmd: string;
+  cursor?: boolean;
+  class?: string;
+}
+
+const { cmd, cursor = false, class: className } = Astro.props;
+---
+
+<p class:list={['text-sm text-term-dim', className]}>
+  <span class="text-term-green">&gt;</span>{' '}<span
+    class:list={['text-term-fg', cursor && 'cursor']}>{cmd}</span
+  >
+</p>
