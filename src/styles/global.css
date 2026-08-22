@@ -12,15 +12,14 @@
     Consolas, 'Liberation Mono', monospace;
 
   /* Terminal palette */
-  --color-term-bg: #0b0f0e;
-  --color-term-panel: #111716;
-  --color-term-line: #1e2a27;
-  --color-term-dim: #8b9b95;
-  --color-term-fg: #b8c4bf;
-  --color-term-bright: #e8efec;
-  --color-term-green: #5ef08f;
+  --color-term-bg: #0b0d13;
+  --color-term-panel: #12151f;
+  --color-term-line: #212637;
+  --color-term-dim: #8d92a8;
+  --color-term-fg: #bcc1d2;
+  --color-term-bright: #e9ebf4;
+  --color-term-accent: #8b93f8;
   --color-term-amber: #f0b45e;
-  --color-term-cyan: #5ecdf0;
   --color-term-red: #f0685e;
 }
 
@@ -40,7 +39,7 @@
   }
 
   ::selection {
-    background-color: var(--color-term-green);
+    background-color: var(--color-term-accent);
     color: var(--color-term-bg);
   }
 
@@ -49,7 +48,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-term-green);
+    outline: 2px solid var(--color-term-accent);
     outline-offset: 2px;
   }
 }
@@ -57,8 +56,8 @@
 @layer components {
   /* Inline link: underlined on hover, like a terminal hyperlink */
   .link {
-    color: var(--color-term-green);
-    border-bottom: 1px solid color-mix(in oklab, var(--color-term-green) 35%, transparent);
+    color: var(--color-term-accent);
+    border-bottom: 1px solid color-mix(in oklab, var(--color-term-accent) 35%, transparent);
     transition: color 120ms, border-color 120ms;
   }
   .link:hover {
@@ -74,7 +73,7 @@
     height: 1.05em;
     margin-left: 0.15em;
     vertical-align: text-bottom;
-    background-color: var(--color-term-green);
+    background-color: var(--color-term-accent);
     animation: blink 1.1s step-end infinite;
   }
 
@@ -111,7 +110,7 @@
   .prose-term h2::before,
   .prose-term h3::before {
     content: '\25B8';
-    color: var(--color-term-green);
+    color: var(--color-term-accent);
     margin-right: 0.6ch;
   }
 
@@ -121,8 +120,8 @@
   .prose-term h4 { font-size: 1rem; }
 
   .prose-term a {
-    color: var(--color-term-green);
-    border-bottom: 1px solid color-mix(in oklab, var(--color-term-green) 35%, transparent);
+    color: var(--color-term-accent);
+    border-bottom: 1px solid color-mix(in oklab, var(--color-term-accent) 35%, transparent);
   }
   .prose-term a:hover {
     color: var(--color-term-bright);
@@ -143,11 +142,11 @@
   .prose-term li { margin-top: 0.5em; }
   .prose-term ul > li::before {
     content: '-';
-    color: var(--color-term-green);
+    color: var(--color-term-accent);
     margin-left: -1.5em;
     margin-right: 0.75em;
   }
-  .prose-term ol > li::marker { color: var(--color-term-green); }
+  .prose-term ol > li::marker { color: var(--color-term-accent); }
 
   .prose-term blockquote {
     border-left: 2px solid var(--color-term-line);

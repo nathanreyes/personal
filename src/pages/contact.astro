@@ -16,7 +16,7 @@ const errors: Record<string, string> = {
 const error = errors[Astro.url.searchParams.get('error') ?? ''];
 
 const field =
-  'block w-full bg-term-panel border border-term-line text-term-bright font-mono px-3 py-2 placeholder:text-term-dim focus:border-term-green focus:outline-none transition-colors';
+  'block w-full bg-term-panel border border-term-line text-term-bright font-mono px-3 py-2 placeholder:text-term-dim focus:border-term-accent focus:outline-none transition-colors';
 ---
 
 <Base title="Contact" description="Get in touch with Nathan Reyes.">
@@ -76,7 +76,7 @@ const field =
 
     <button
       type="submit"
-      class="bg-term-green text-term-bg px-4 py-2 hover:bg-term-bright transition-colors"
+      class="bg-term-accent text-term-bg px-4 py-2 hover:bg-term-bright transition-colors"
     >
       send
     </button>

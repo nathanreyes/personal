@@ -27,13 +27,13 @@ const strip = (u: string) =>
     {
       groups.map((group) => (
         <section>
-          <h2 class="text-sm uppercase tracking-widest text-term-green mb-6">
+          <h2 class="text-sm uppercase tracking-widest text-term-accent mb-6">
             {group.heading}
           </h2>
 
           <ul class="space-y-10">
             {group.items.map((p) => (
-              <li class="border-l-2 border-term-line hover:border-term-green transition-colors pl-5">
+              <li class="border-l-2 border-term-line hover:border-term-accent transition-colors pl-5">
                 <div class="flex flex-wrap items-baseline gap-x-3 mb-2">
                   <h3 class="text-term-bright text-lg tracking-tight">{p.name}</h3>
                   <span class="text-xs text-term-dim">{p.tagline}</span>

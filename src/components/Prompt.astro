@@ -14,7 +14,7 @@ const { cmd, cursor = false, class: className } = Astro.props;
 ---
 
 <p class:list={['text-sm text-term-dim', className]}>
-  <span class="text-term-green">&gt;</span>{' '}<span
+  <span class="text-term-accent">&gt;</span>{' '}<span
     class:list={['text-term-fg', cursor && 'cursor']}>{cmd}</span
   >
 </p>
