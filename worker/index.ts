@@ -88,10 +88,24 @@ async function verifyTurnstile(token: string, clientIp: string, env: Env): Promi
       signal: AbortSignal.timeout(10_000),
       body: new URLSearchParams({ secret: env.TURNSTILE_SECRET, response: token, remoteip: clientIp }),
     });
-    if (!response.ok) return false;
-    const result = (await response.json()) as { success: boolean; action?: string; hostname?: string };
-    return result.success && result.action === CONTACT_ACTION && hostnames.has(result.hostname ?? '');
-  } catch {
+    const result = (await response.json()) as {
+      success: boolean;
+      action?: string;
+      hostname?: string;
+      'error-codes'?: string[];
+    };
+    const passed =
+      response.ok && result.success && result.action === CONTACT_ACTION && hostnames.has(result.hostname ?? '');
+    // The reason is the only way to tell a bad secret from a bot.
+    if (!passed) console.warn(JSON.stringify({ message: 'Turnstile check failed', result }));
+    return passed;
+  } catch (error) {
+    console.error(
+      JSON.stringify({
+        message: 'Turnstile siteverify request failed',
+        error: error instanceof Error ? error.message : 'Unknown error',
+      }),
+    );
     return false;
   }
 }
