@@ -128,28 +128,28 @@ export async function handleContact(request: Request, env: Env): Promise<Respons
     contentLength <= 0 ||
     contentLength > MAX_BODY_BYTES
   ) {
-    return redirect(request, '/contact/?error=invalid');
+    return redirect(request, '/contact/#error-invalid');
   }
 
   let form: FormData;
   try {
     form = await request.formData();
   } catch {
-    return redirect(request, '/contact/?error=invalid');
+    return redirect(request, '/contact/#error-invalid');
   }
 
   // Honeypot: bots fill every field, people never see this one.
   if (text(form, 'website')) return redirect(request, '/contact/success/');
 
   const contact = parseContact(form);
-  if (!contact) return redirect(request, '/contact/?error=invalid');
+  if (!contact) return redirect(request, '/contact/#error-invalid');
 
   const clientIp = request.headers.get('CF-Connecting-IP') ?? '';
   const { success } = await env.CONTACT_RATE_LIMIT.limit({ key: clientIp });
-  if (!success) return redirect(request, '/contact/?error=rate');
+  if (!success) return redirect(request, '/contact/#error-rate');
 
   if (!(await verifyTurnstile(text(form, 'cf-turnstile-response'), clientIp, env))) {
-    return redirect(request, '/contact/?error=verify');
+    return redirect(request, '/contact/#error-verify');
   }
 
   try {
@@ -165,7 +165,7 @@ export async function handleContact(request: Request, env: Env): Promise<Respons
         error: error instanceof Error ? error.message : 'Unknown error',
       }),
     );
-    return redirect(request, '/contact/?error=send');
+    return redirect(request, '/contact/#error-send');
   }
 }
 

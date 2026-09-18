@@ -8,13 +8,14 @@ const channels = [
   { key: 'resume', value: 'resume.pdf', href: '/resume.pdf' },
 ];
 
+// The page is static, so it cannot read a query string. The Worker redirects
+// to `#error-<key>` and CSS `:target` shows the matching message.
 const errors: Record<string, string> = {
   invalid: 'Please check each field and try again.',
   rate: 'Too many submissions from your connection. Please wait a minute and retry.',
   verify: 'The security check did not pass. Please try again.',
   send: "I couldn't send that. Please email me directly instead.",
 };
-const error = errors[Astro.url.searchParams.get('error') ?? ''];
 
 // Public by design; the matching secret lives in the Worker as TURNSTILE_SECRET.
 const turnstileSitekey = '0x4AAAAAAE8Ph1asvA0GTils';
@@ -32,14 +33,15 @@ const field =
   </p>
 
   {
-    error && (
+    Object.entries(errors).map(([key, message]) => (
       <p
+        id={`error-${key}`}
         role="alert"
-        class="max-w-md border border-term-red text-term-red text-sm px-3 py-2 mb-6"
+        class="hidden target:block max-w-md border border-term-red text-term-red text-sm px-3 py-2 mb-6"
       >
-        {error}
+        {message}
       </p>
-    )
+    ))
   }
 
   <form method="POST" action="/api/contact" class="max-w-md space-y-4 mb-16">
