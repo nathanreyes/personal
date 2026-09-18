@@ -33,6 +33,19 @@ The contact form emails `CONTACT_EMAIL`; that address must be verified as a
 Cloudflare Email Routing destination before the first send. Submissions are
 capped per visitor IP by the `CONTACT_RATE_LIMIT` binding.
 
+A [Turnstile](https://developers.cloudflare.com/turnstile/) widget guards the
+form, and the Worker verifies its token before it sends. The contact page
+loads Turnstile's script; no other page ships JavaScript. The sitekey is public
+and lives in `src/pages/contact.astro`. The secret is a Worker secret:
+
+```sh
+npx wrangler secret put TURNSTILE_SECRET
+```
+
+The Worker only accepts tokens issued on the hostnames in
+`TURNSTILE_HOSTNAMES` (`wrangler.jsonc`). For local runs, put
+`TURNSTILE_SECRET` and `TURNSTILE_HOSTNAMES=localhost` in `.dev.vars`.
+
 ## Content
 
 Blog posts are markdown in `src/content/blog/`, validated by the schema in

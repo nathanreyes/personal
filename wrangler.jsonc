@@ -39,5 +39,13 @@
     }
   ],
 
+  // Turnstile tokens must come from one of these hostnames. Keep localhost
+  // out of this list; `.dev.vars` overrides it for local runs.
+  "vars": {
+    "TURNSTILE_HOSTNAMES": "nathanreyes.com,www.nathanreyes.com"
+  },
+  // Set with `wrangler secret put TURNSTILE_SECRET`.
+  "secrets": { "required": ["TURNSTILE_SECRET"] },
+
   "observability": { "enabled": true }
 }

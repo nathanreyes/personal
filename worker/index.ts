@@ -1,4 +1,6 @@
 const CONTACT_PATH = '/api/contact';
+// Must match `data-action` on the widget in contact.astro.
+const CONTACT_ACTION = 'contact';
 const CONTACT_TO = 'nathanreyes.me@gmail.com';
 const CONTACT_FROM = 'website@nathanreyes.com';
 const MAX_BODY_BYTES = 16_384;
@@ -55,7 +57,7 @@ function parseContact(form: FormData): Contact | null {
 }
 
 /**
- * The site ships no JavaScript, so the form is a plain POST and the reply is a
+ * The form is a plain POST with no script of its own, so the reply is a
  * redirect the browser can follow on its own.
  */
 function redirect(request: Request, path: string): Response {
@@ -66,6 +68,32 @@ function redirect(request: Request, path: string): Response {
       'Cache-Control': 'no-store',
     },
   });
+}
+
+/**
+ * Checks the Turnstile token with Cloudflare. Any failure — a missing token,
+ * a network error, the wrong action or hostname — counts as a bot.
+ */
+async function verifyTurnstile(token: string, clientIp: string, env: Env): Promise<boolean> {
+  const hostnames = new Set(
+    env.TURNSTILE_HOSTNAMES.split(',')
+      .map((hostname) => hostname.trim())
+      .filter(Boolean),
+  );
+  if (!token || token.length > 2048 || hostnames.size === 0) return false;
+
+  try {
+    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      signal: AbortSignal.timeout(10_000),
+      body: new URLSearchParams({ secret: env.TURNSTILE_SECRET, response: token, remoteip: clientIp }),
+    });
+    if (!response.ok) return false;
+    const result = (await response.json()) as { success: boolean; action?: string; hostname?: string };
+    return result.success && result.action === CONTACT_ACTION && hostnames.has(result.hostname ?? '');
+  } catch {
+    return false;
+  }
 }
 
 function contactEmail(contact: Contact) {
@@ -119,6 +147,10 @@ export async function handleContact(request: Request, env: Env): Promise<Respons
   const clientIp = request.headers.get('CF-Connecting-IP') ?? '';
   const { success } = await env.CONTACT_RATE_LIMIT.limit({ key: clientIp });
   if (!success) return redirect(request, '/contact/?error=rate');
+
+  if (!(await verifyTurnstile(text(form, 'cf-turnstile-response'), clientIp, env))) {
+    return redirect(request, '/contact/?error=verify');
+  }
 
   try {
     const result = await env.CONTACT_EMAIL.send(contactEmail(contact));
